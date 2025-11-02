@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
         etAltura.error = null
         etPeso.requestFocus()
 
-        // Alterna a visibilidade dos botões
+        // Alterna a visibilidade dos btn
         btnLimpar.visibility = View.GONE
         btnCalcular.visibility = View.VISIBLE
     }
