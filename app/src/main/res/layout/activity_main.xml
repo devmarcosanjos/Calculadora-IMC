@@ -1,60 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    android:paddingHorizontal="16dp"
+    tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Peso:" />
+        android:layout_marginBottom="24dp"
+        android:text="IMC"
+        android:textAppearance="@style/TextAppearance.Material3.DisplayMedium"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Peso (kg):" />
 
     <EditText
         android:id="@+id/etPeso"
-        android:layout_width="160dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:hint="Digite seu peso"
-        android:inputType="numberDecimal"
-        />
+        android:inputType="numberDecimal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Alfura:"
-        android:inputType="numberDecimal"
-        />
+        android:text="Altura (cm):" />
 
     <EditText
         android:id="@+id/etAltura"
-        android:layout_width="160dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:hint="Digite sua altura"
-        android:inputType="numberDecimal"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="IMC"
-        />
-
-    <TextView
-        android:id="@+id/tvResultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@android:style/TextAppearance.Large"
-        android:textStyle="bold"
-        android:text="0.0" />
+        android:hint="Digite sua altura em cm"
+        android:inputType="numberDecimal" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnCalcular"
@@ -62,15 +53,43 @@
             android:layout_height="wrap_content"
             android:text="Calcular" />
 
-        <Space
-            android:layout_width="20dp"
-            android:layout_height="0dp"
-            />
-
         <Button
             android:id="@+id/btnLimpar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Limpar" />
+            android:text="Limpar"
+            android:visibility="gone"
+            tools:visibility="visible" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seu IMC"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge" />
+
+        <TextView
+            android:id="@+id/tvResultado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.0"
+            android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvClassification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            tools:text="Peso Ideal" />
+    </LinearLayout>
+
 </LinearLayout>
